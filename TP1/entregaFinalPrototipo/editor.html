@@ -32,15 +32,15 @@
         sepiaB = Math.floor(0.272*r + 0.534*g + 0.131*b);
 
         gris = (r+g+b) / 3;
-        //negativo 255 - (r,g,b) 
+        //negativo 255 - (r,g,b)
 
         if (gris < 128){
-          setPixel(imageData, x, y, 0, 0, 0, 255);  
+          setPixel(imageData, x, y, 0, 0, 0, 255);
         }else{
-          setPixel(imageData, x, y, 255, 255, 255, 255);  
+          setPixel(imageData, x, y, 255, 255, 255, 255);
         }
-        
-              
+
+
       }
     }
 
