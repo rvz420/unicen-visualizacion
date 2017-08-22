@@ -1,8 +1,8 @@
-var ctx = document.getElementById("canvas").getContext("2d");
+var ctx = document.getElementById("editorCanvas").getContext("2d");
 
 var image1 = new Image();
 image1.crossOrigin = '';
-image1.src = "http://68.media.tumblr.com/0fecf067ab1ad7d61785975860f36e61/tumblr_o5fuwvXaxt1u25kiio3_500.jpg";
+image1.src = "https://i.imgur.com/SIJSp7Ur.jpg";
 
 image1.onload = function() {
   ctx.drawImage(this, 0, 0);

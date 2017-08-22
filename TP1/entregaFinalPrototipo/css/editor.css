@@ -1,3 +1,11 @@
 h1{
-  font-family: 'Dancing Script', cursive;
+	font-family: 'Dancing Script', cursive;
+}
+
+#editorCanvas{
+	border: #000 solid 1px;
+	margin: auto;
+  	display: block;
+  	width: 600;
+  	height: 400;
 }
