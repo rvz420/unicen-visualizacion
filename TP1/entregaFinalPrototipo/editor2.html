@@ -5,23 +5,75 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/editor.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="icons/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
 
-	<div class="container">
-
+	<div class="container-fluid">
+				
 		<div class="row">
 			<div class="col">
 				<h1>Snapgram</h1>
 			</div>
 		</div>
 
+		<!--canvas -->
 		<div class="row">
-			<canvas id="editorCanvas" width="600" height="400"/>
+			<div class="col">
+				<canvas id="editorCanvas" width="600" height="400"/>
+				<canvas id="backCanvas" width="600" height="400" style="display: none"></canvas>
+			</div>			
 		</div>
 		
-		
+			<!--control de brillo -->
+			<div id="opciones" data-children=".item">
+				<div class="item" >
+					<div class="col collapse" id="brilloColapsable" role="tabpanel">
+    					<input id="brilloSlider" type="range" min="-255" max="255" step="1" value ="0">
+    					<span id="brilloValue"></span>
+					</div>
+				</div>
+
+			<!--ventana de filtros -->
+				<div class="item" >
+					<div class="col collapse" id="filtrosColapsable" role="tabpanel">
+						<button id="originalBtn" type="button" class="btn btn-primary">Original</button>
+    					<button id="grayscaleBtn" type="button" class="btn btn-primary">Grayscale</button>
+    					<button id="invertBtn" type="button" class="btn btn-primary">Negativo</button>
+    					<button id="sepiaBtn" type="button" class="btn btn-primary">Sepia</button>
+    					<button id="binaryBtn" type="button" class="btn btn-primary">Binarizacion</button>
+    					<button id="blurBtn" type="button" class="btn btn-primary">Blur</button>
+    					<button id="bordesBtn" type="button" class="btn btn-primary">Bordes</button>
+
+					</div>
+				</div>
+
+			<!--control del contraste -->
+				<div class="item" >
+					<div class="col collapse" id="contrasteColapsable" role="tabpanel">
+    						<h2>contraste</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<!--opciones -->
+		<div  class="row opc">
+			<div><input type="file" id="file-input"></div>
+			<div class="col-md-12 text-center">
+				<div class="btn-group" role="group" aria-label="Opciones de edicion">
+
+					<button type="button" class="btn btn-dark" data-toggle="collapse"  data-parent="#opciones" data-target="#brilloColapsable" aria-expanded="true" aria-controls="brilloColapsable"><span class="oi oi-sun" title="brillo" aria-hidden="true"></span></button>
+										
+					<button type="button" class="btn btn-dark" data-toggle="collapse"  data-parent="#opciones" data-target="#filtrosColapsable" aria-expanded="true" aria-controls="filtrosColapsable"><span class="oi oi-aperture" title="filtros" aria-hidden="true"></span></button>
+					
+					<button type="button" class="btn btn-dark" data-toggle="collapse"  data-parent="#opciones" data-target="#contrasteColapsable" aria-expanded="true" aria-controls="contrasteColapsable"><span class="oi oi-contrast" title="contraste" aria-hidden="true"></span></button>
+					
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
