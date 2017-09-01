@@ -7,6 +7,8 @@ function Circle(paramPosX, paramPosY, paramRadio, paramColor){
 	this.color = paramColor;
 }
 
+
+
 Circle.prototype.draw = function(){
 	this.ctx.fillStyle = this.color;
 	this.ctx.beginPath();
@@ -35,8 +37,30 @@ var getRandomColor = function () {
   return color;
 }
 
+function dibujarOnclick(e){
+
+	var posX = e.clientX;
+	var posY = e.clientY;
+
+	var circulo = new Circle(posX,posY,100,"#ffffff");
+
+          var img = new Image();
+          img.src = "/img.png";
+
+          img.onload = function(){
+            var image = ctx.drawImage(img,posX-100,posY-100);
+
+            ctx.fillStyle = image;
+            ctx.beginPath();
+          //ctx.arc(circulo.posX,circulo.posY,circulo.radio,0,Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();	
+        }
+
+}
 
 var circulo = new Circle(300,300,40,"#9b59b6");
 
+canvas = document.getElementById("canvas"); 
 
-
+canvas.onclick = r1.dibujarOnclick();
