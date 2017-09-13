@@ -1,7 +1,7 @@
 #canvas {
-  border: #030303 dashed 1px;
   margin: auto;
   display: block;
   width: 640;
   height: 480;
+  background:url(../images/background.jpg);
 }

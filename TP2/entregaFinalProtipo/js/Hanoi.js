@@ -7,11 +7,16 @@ class Hanoi {
     this.isDragging = false;
     this.dragPiece; //current draging piece
     this.pieces = [
-      new Piece(100, 50, this.ctx, this.images[0]),
-      new Piece(120, 50, this.ctx, this.images[1]),
-      new Piece(140, 50, this.ctx, this.images[2]),
-      new Piece(160, 50, this.ctx, this.images[3])
+      new Piece(100, 50, this.ctx, this.images.piece1),
+      new Piece(120, 50, this.ctx, this.images.piece2),
+      new Piece(140, 50, this.ctx, this.images.piece3),
+      new Piece(160, 50, this.ctx, this.images.piece4)
     ];
+    this.totems = [
+      new Totem[],
+      new Totem[],
+      new Totem[]
+    ]
     this.offSet = {};
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
@@ -56,7 +61,6 @@ class Hanoi {
   }
 
   onMouseMove(e) {
-
     this.dragPiece.x = e.layerX - this.offSet.x;
     this.dragPiece.y = e.layerY - this.offSet.y;
     this.draw();
@@ -68,10 +72,11 @@ class Hanoi {
     this.isDragging = false;
     for (let i = 0; i < this.pieces.length; i++) {
       let piece = this.pieces[i];
-      if (piece.intersects() {
-
-      }
-    this.draw();
+      // if (piece.intersects(totem)) {
+      //
+      // }
+      this.draw();
+    }
   }
 
   drawBoard() {
@@ -99,36 +104,6 @@ class Hanoi {
       this.ctx.lineTo(postLeft + postWidth / 2, this.canvas.height);
       this.ctx.stroke();
     }
-
   }
 
 }
-
-const canvas = document.getElementById("canvas");
-
-let piece1 = new Image();
-let piece2 = new Image();
-let piece3 = new Image();
-let piece4 = new Image();
-let piece5 = new Image();
-let piece6 = new Image();
-let totemEasy = new Image();
-
-piece1.src = "images/piece1.svg";
-piece2.src = "images/piece2.svg";
-piece3.src = "images/piece3.svg";
-piece4.src = "images/piece4.svg";
-piece5.src = "images/piece5.svg";
-piece6.src = "images/piece6.svg";
-totemEasy.src = "images/totem_easy.svg";
-
-let images = [piece1,piece2,piece3,piece4,piece5,piece6];
-
-const hanoi = new Hanoi(canvas, images);
-
-hanoi.draw();
-canvas.addEventListener('mousedown', function(e) {
-  hanoi.onMouseDown(e)
-});
-//  if (r1.isClicked(e)){canvas.addEventListener('mousemove', function(e){r1.onMouseMove(e)} )}
-//});
