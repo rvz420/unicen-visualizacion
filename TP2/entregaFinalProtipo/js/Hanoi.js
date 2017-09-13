@@ -13,9 +13,9 @@ class Hanoi {
       new Piece(160, 50, this.ctx, this.images.piece4)
     ];
     this.totems = [
-      new Totem[],
-      new Totem[],
-      new Totem[]
+      new Totem(113 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
+      new Totem(326 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
+      new Totem(539 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
     ]
     this.offSet = {};
     this.onMouseMove = this.onMouseMove.bind(this);
@@ -28,7 +28,9 @@ class Hanoi {
 
   draw() {
     this.clear();
-    this.drawBoard();
+    this.totems[0].draw();
+    this.totems[1].draw();
+    this.totems[2].draw();
     for (let i = 0; i < this.pieces.length; i++) {
       let piece = this.pieces[i];
       if (this.isDragging && piece === this.dragPiece) {
