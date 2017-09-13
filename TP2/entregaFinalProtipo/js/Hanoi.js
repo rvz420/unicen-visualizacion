@@ -1,25 +1,31 @@
 class Hanoi {
 
-  constructor(canvas, images) {
+  constructor(canvas, images, difficulty) {
     this.canvas = canvas;
     this.images = images;
     this.ctx = canvas.getContext('2d');
+    this.difficulty = difficulty;
     this.isDragging = false;
     this.dragPiece; //current draging piece
     this.pieces = [
-      new Piece(100, 50, this.ctx, this.images.piece1),
-      new Piece(120, 50, this.ctx, this.images.piece2),
-      new Piece(140, 50, this.ctx, this.images.piece3),
-      new Piece(160, 50, this.ctx, this.images.piece4)
+      new Piece(this.images.piece1, 1),
+      new Piece(this.images.piece2, 2),
+      new Piece(this.images.piece3, 3),
+      new Piece(this.images.piece4, 4),
+      new Piece(this.images.piece5, 5),
+      new Piece(this.images.piece6, 6)
     ];
-    this.totems = [
-      new Totem(113 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
-      new Totem(326 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
-      new Totem(539 - this.images.totems_foundation.width/2, this.images.totem_easy.height, this.ctx, this.images.totem_easy,this.images.totems_foundation),
-    ]
     this.offSet = {};
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
+
+    this.totemLeft = new Totem(113 - this.images.totems_foundation.width / 2, this.images.totem_easy.height, this.images.totem_easy, this.images.totems_foundation);
+    this.totemMid = new Totem(326 - this.images.totems_foundation.width / 2, this.images.totem_easy.height, this.images.totem_easy, this.images.totems_foundation);
+    this.totemRight = new Totem(539 - this.images.totems_foundation.width / 2, this.images.totem_easy.height, this.images.totem_easy, this.images.totems_foundation);
+
+    for (var i = 0; i < this.difficulty; i++) {
+      this.totemLeft.addPiece(this.pieces[i]);
+    }
   }
 
   clear() {
@@ -28,23 +34,9 @@ class Hanoi {
 
   draw() {
     this.clear();
-    this.totems[0].draw();
-    this.totems[1].draw();
-    this.totems[2].draw();
-    for (let i = 0; i < this.pieces.length; i++) {
-      let piece = this.pieces[i];
-      if (this.isDragging && piece === this.dragPiece) {
-        this.ctx.shadowColor = "black";
-        this.ctx.shadowOffsetX = 4;
-        this.ctx.shadowOffsetY = 4;
-        this.ctx.shadowBlur = 8;
-      }
-      piece.draw();
-      this.ctx.shadowColor = null;
-      this.ctx.shadowOffsetX = null;
-      this.ctx.shadowOffsetY = null;
-      this.ctx.shadowBlur = null;
-    }
+    this.totemLeft.draw(this.ctx);
+    this.totemMid.draw(this.ctx);
+    this.totemRight.draw(this.ctx);
   }
 
   onMouseDown(e) {

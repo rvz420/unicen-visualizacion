@@ -1,12 +1,16 @@
-class Piece extends Rectangle {
+class Piece {
 
-  constructor(x, y, ctx, img) {
-    super(x, y, img.width, img.height, ctx);
+  constructor(img, valor) {
     this.img = img;
+    this.valor = valor;
   }
 
-  draw() {
-    this.ctx.drawImage(this.img, this.x, this.y, this.img.width, this.img.height);
+  getHeight(){
+    return this.img.height;
+  }
+
+  draw(ctx, x, y) {
+    ctx.drawImage(this.img, x, y);
   }
 
 }

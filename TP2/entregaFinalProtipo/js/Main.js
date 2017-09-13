@@ -33,7 +33,7 @@ loadImages = function(sources, callback) {
 
 initGame = function(images) {
   const canvas = document.getElementById("canvas");
-  const hanoi = new Hanoi(canvas, images);
+  const hanoi = new Hanoi(canvas, images, 4);
   hanoi.draw();
   canvas.addEventListener('mousedown', function(e) {
     hanoi.onMouseDown(e)
