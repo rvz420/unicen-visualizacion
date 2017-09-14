@@ -1,0 +1,7 @@
+#canvas {
+  margin: auto;
+  display: block;
+  width: 640;
+  height: 480;
+  background:url(../images/background.jpg);
+}
