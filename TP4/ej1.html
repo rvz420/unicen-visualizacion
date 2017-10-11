@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TP4 EJ1</title>
+  </head>
+  <body>
+    <style media="screen">
+      #miDiv{
+        background-color: red;
+        width: 200px;
+        height: 300px;
+      }
+    </style>
+    <div id="miDiv"></div>
+
+    <script type="text/javascript">
+    let midiv = document.getElementById('miDiv');
+    let arrTrans = ["rotate(7deg)", "translate(100px, 50px)", "scale(2)", "skew(20deg, 30deg)"]
+
+    window.addEventListener('click', ()=>{
+      let rand = arrTrans[Math.floor(Math.random() * arrTrans.length)];
+      midiv.style.transform = rand;
+    });
+    </script>
+
+  </body>
+</html>

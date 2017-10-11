@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TP4 EJ2</title>
+  </head>
+  <body>
+    <style media="screen">
+      #hoverDiv {
+        width: 100px;
+        height: 100px;
+        background: red;
+        -webkit-transition: width 2s; /* Safari */
+        transition: width 2s;
+      }
+
+      #hoverDiv:hover {
+        width: 300px;
+      }
+
+      #clickDiv {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        -webkit-transition: height 4s; /* Safari */
+        transition: height 4s;
+      }
+    </style>
+    <div id="hoverDiv">
+      <p>Hovereame</p>
+    </div>
+
+    <div id="clickDiv">
+      <p>Pulsame</p>
+    </div>
+
+
+
+    <script type="text/javascript">
+    let hoverDiv = document.getElementById('hoverDiv');
+    let clickDiv = document.getElementById('clickDiv');
+
+    clickDiv.addEventListener('mousedown', ()=>{
+      clickDiv.style.height = "400px"
+    });
+
+    clickDiv.addEventListener('mouseup', ()=>{
+      clickDiv.style.height = "100px"
+    });
+    </script>
+
+  </body>
+</html>
