@@ -1,0 +1,83 @@
+#game {
+    position: relative;
+}
+
+#game div {
+    position: absolute;
+}
+
+#background_b {
+    width: 640px;
+    height: 47px;
+    z-index: 81;
+    background-image: url("../images/background_b.png");
+    background-position: 0 0;
+    animation-name: background-run-x;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#background_a {
+    width: 640px;
+    height: 96px;
+    z-index: 80;
+    background-image: url("../images/background_a.png");
+    background-position: 0 47px;
+    animation-name: background-run-x;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+#foreground {
+    width: 640px;
+    height: 448px;
+    z-index: 100;
+    background-image: url("../images/foreground.png");
+    background-position: 0 0;
+    animation-name: foreground-run-x;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#midground {
+    width: 640px;
+    height: 448px;
+    z-index: 50;
+    background-image: url("../images/midground.png");
+    background-position: 0 96px;
+    animation-name: midground-run-x;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes background-run-x {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -1024px;
+    }
+}
+
+@keyframes foreground-run-x {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -3165px;
+    }
+}
+
+@keyframes midground-run-x {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -1445px;
+    }
+}
