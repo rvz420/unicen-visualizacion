@@ -1,7 +1,60 @@
+a {
+  color: white;
+}
+
+.navbar {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  margin-bottom: 3%;
+}
+
+.bg-dark {
+  background-color: #d50000!important;
+}
+
+.titulo {
+  font-family: 'Indie Flower', cursive;  
+}
+
+body{
+  background-color:#038f9b;
+}
+
 #canvas {
   margin: auto;
   display: block;
   width: 640;
   height: 480;
   background:url(../images/background.jpg);
+}
+
+.botones{
+  margin-bottom: 3%;  
+}
+
+.bs-docs-footer {
+  text-align: left;
+}
+
+.bs-docs-footer {
+  clear: both;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: white;
+  text-align: center;
+  background-color: #d50000;
+  font-size: 1em;
+}
+
+footer {
+  border-top: 1em solid #d84c4b;  
+  display: block;
 }

@@ -7,12 +7,19 @@
 	<!-- <link rel="shortcut icon" type='image/x-icon' href="favicon.png" /> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand mx-auto" href="#">
+			<img src="images/hanoi_logo.png" width="30" height="30" alt=""> <span class="titulo">Hanoi-game.com</span> 
+		</a>
+	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="col">
+			<div class="col juegoContenedor">
 				<canvas id="canvas" class="img-fluid" width="640" height="480" />
 			</div>
 		</div>
@@ -23,13 +30,22 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row botones">
 			<div class="col text-center">
 				<button type="button" id="btnEasy" class="btn btn-primary">Facil</button>
 				<button type="button" id="btnMid" class="btn btn-warning">Medio</button>
 				<button type="button" id="btnHard" class="btn btn-danger">Dificil</button>
 			</div>
 		</div>
+	</div>
+
+	<footer class="bs-docs-footer ">
+		<div class="container">
+				<span class="text-foot">Rodrigo Vazquez - 2017 -  
+					<a href="https://www.github.com/rvz420" target="_blank" title="Github"><i class="fa fa-github medio" aria-hidden="true"></i></a>
+				</span>
+		</div>
+	</footer>
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="js/Rectangle.js"></script>

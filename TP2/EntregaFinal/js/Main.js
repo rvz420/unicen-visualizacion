@@ -38,16 +38,19 @@ initGame = function(images) {
   let  btnEasy = document.getElementById('btnEasy');
   btnEasy.addEventListener('click', function(){
     jugar(new Hanoi(canvas, images, 2));
+    document.getElementById("txtUwin").innerHTML = "";
   });
 
   let  btnMid = document.getElementById('btnMid');
   btnMid.addEventListener('click', function(){
     jugar(new Hanoi(canvas, images, 1));
+    document.getElementById("txtUwin").innerHTML = "";
   });
 
   let  btnHard = document.getElementById('btnHard');
   btnHard.addEventListener('click', function(){
     jugar(new Hanoi(canvas, images, 0));
+    document.getElementById("txtUwin").innerHTML = "";
   });
 
   jugar = function(hanoi){
@@ -81,10 +84,9 @@ initGame = function(images) {
           toTotem.addPiece(dragPiece);
           if (fromTotem != toTotem) {
             hanoi.setMoves(hanoi.getNumMoves() + 1);
-            console.log("movimiento" + hanoi.getNumMoves());
           }
           if (hanoi.win()) {
-            document.getElementById("txtUwin").innerHTML = "You win! with just "+ hanoi.getNumMoves() +" moves" ;
+            document.getElementById("txtUwin").innerHTML = "Ganaste! haz hecho "+ hanoi.getNumMoves() +" movimientos" ;
           }
         } else {
           fromTotem.addPiece(dragPiece);
