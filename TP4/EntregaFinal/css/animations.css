@@ -1,4 +1,6 @@
 #game {
+    width: 640px;
+    height: 448px;
     position: relative;
 }
 
@@ -13,7 +15,7 @@
     background-image: url("../images/background_b.png");
     background-position: 0 0;
     animation-name: background-run-x;
-    animation-duration: 4s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -25,7 +27,7 @@
     background-image: url("../images/background_a.png");
     background-position: 0 47px;
     animation-name: background-run-x;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -38,7 +40,7 @@
     background-image: url("../images/foreground.png");
     background-position: 0 0;
     animation-name: foreground-run-x;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -50,9 +52,63 @@
     background-image: url("../images/midground.png");
     background-position: 0 96px;
     animation-name: midground-run-x;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+#obstacles {
+    width: 137px;
+    height: 124px;
+    z-index: 900;
+    background-image: url("../images/cactus.png");
+    background-position: 0 0;
+    animation-name: midground-run-x;
+    animation-duration: 20s;
+}
+
+#coyote_run {
+    width: 76px;
+    height: 126px;
+    background-image: url("../images/coyote.png");
+    background-position: 0 0;
+    animation-name: coyote-run-x;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(6);
+    z-index: 1000;
+    top: 222px;
+}
+
+#coyote_jump {
+    width: 104px;
+    height: 150px;
+    background-image: url("../images/coyote.png");
+    background-position: 0 150px;
+    animation-name: coyote-jump-x;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(6);
+    z-index: 1000;
+    top: 222px;
+}
+
+@keyframes coyote-jump-x {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -624px;
+    }
+}
+
+@keyframes coyote-run-x {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -456px;
+    }
 }
 
 @keyframes background-run-x {
