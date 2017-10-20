@@ -2,6 +2,7 @@
     width: 640px;
     height: 448px;
     position: relative;
+    overflow:hidden;
 }
 
 #game div {
@@ -63,34 +64,34 @@
     z-index: 900;
     background-image: url("../images/cactus.png");
     background-position: 0 0;
-    animation-name: midground-run-x;
-    animation-duration: 20s;
+    top: 222px;
 }
 
-#coyote_run {
+#player {
+    background-image: url("../images/coyote.png");
+    z-index: 1000;
+    top: 222px;
+    left: 100px;
+}
+
+.coyote_run {
     width: 76px;
     height: 126px;
-    background-image: url("../images/coyote.png");
     background-position: 0 0;
     animation-name: coyote-run-x;
     animation-duration: 0.4s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(6);
-    z-index: 1000;
-    top: 222px;
 }
 
-#coyote_jump {
+.coyote_jump {
     width: 104px;
     height: 150px;
-    background-image: url("../images/coyote.png");
     background-position: 0 150px;
     animation-name: coyote-jump-x;
     animation-duration: 0.4s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(6);
-    z-index: 1000;
-    top: 222px;
 }
 
 @keyframes coyote-jump-x {
