@@ -59,6 +59,7 @@
 }
 
 #obstacles {
+    border:#000 solid 1px;
     width: 137px;
     height: 124px;
     z-index: 900;
@@ -68,6 +69,7 @@
 }
 
 #player {
+    border:#000 solid 1px;
     background-image: url("../images/coyote.png");
     z-index: 1000;
     top: 222px;
@@ -89,7 +91,7 @@
     height: 150px;
     background-position: 0 150px;
     animation-name: coyote-jump-x;
-    animation-duration: 0.4s;
+    animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(6);
 }
