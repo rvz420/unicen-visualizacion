@@ -1,16 +1,20 @@
-let gravity = new Vec2(0, 0.2),
+let lastFrameTimeMs = 0, // The last time the loop was run
+    maxFPS = 60; // The maximum FPS we want to allow
+    delta = 0,
+    timestep = 1000 / 60,
+    gravity = new Vec2(0, 0.2),
     coyote = new Coyote(),
     cactus = new Cactus();
-
-function update() {
+    
+    
+function update(delta) {
     coyote.applyForce(gravity);
     coyote.edges();
-    coyote.update();
-    cactus.update();
-    if (coyote.intersects(cactus)){
-       alert("COLISIONAKSDJAOPSD");
+    coyote.update(delta);
+    cactus.update(delta);
+    if (coyote.intersects(cactus)) {
+        alert("COLISIONAKSDJAOPSD");
     }
-   
 }
 
 function draw() {
@@ -30,14 +34,24 @@ function draw() {
     cactus.draw();
 }
 
-function mainLoop() {
-    update();
+function mainLoop(timestamp) {
+    // Throttle the frame rate.    
+    if (timestamp < lastFrameTimeMs + (1000 / maxFPS)) {
+        requestAnimationFrame(mainLoop);
+        return;
+    }
+    delta += timestamp - lastFrameTimeMs;
+    lastFrameTimeMs = timestamp; 
+    while (delta >= timestep) {
+        update(timestep);
+        delta -= timestep;
+    }
     draw();
     requestAnimationFrame(mainLoop);
 }
 
 document.addEventListener('keydown', event => {
-    if ( ((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar 
+    if (((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar 
         coyote.isGrounded = false;
         coyote.applyForce(new Vec2(0, -8.5)); //jump force
         coyote.state = State.JUMPING;
@@ -45,6 +59,5 @@ document.addEventListener('keydown', event => {
         coyote.applyForce(new Vec2(0, 16));
     }
 });
-
 
 requestAnimationFrame(mainLoop);

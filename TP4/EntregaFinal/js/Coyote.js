@@ -1,6 +1,6 @@
 class Coyote extends Entity{
 
-    constructor(){
+    constructor(delta){
         super();
         this.pos.set(0,222);
         this.vel.set(0,0);

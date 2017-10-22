@@ -1,5 +1,5 @@
 class Cactus extends Entity{
-    constructor() {
+    constructor(delta) {
         super();
         this.pos.set(700,250);
         this.vel.set(0,0);
