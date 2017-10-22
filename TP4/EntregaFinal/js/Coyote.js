@@ -1,41 +1,43 @@
-class Coyote {
+class Coyote extends Entity{
 
     constructor(){
-        this.coyote = new Entity();
-        this.coyote.pos.set(0,222);
-        this.coyote.vel.set(0,0);
-        this.coyote.acc.set(0,0);
+        super();
+        this.pos.set(0,222);
+        this.vel.set(0,0);
+        this.acc.set(0,0);
+        this.width = 30;
+        this.height = 80;
         this.isGrounded = true;
-        this.state = States.RUNNING;
+        this.state = State.RUNNING;
     }
 
     draw (anim) {
         let div = document.getElementById('player');
         div.className = anim;
-        div.style.left = this.coyote.pos.x.toString() + 'px';
-        div.style.top = this.coyote.pos.y.toString() + 'px';  
+        div.style.left = this.pos.x.toString() + 'px';
+        div.style.top = this.pos.y.toString() + 'px';  
     }
 
     update () {
-        this.coyote.vel.add(this.coyote.acc);
-        this.coyote.pos.add(this.coyote.vel);
-        this.coyote.acc.set(0,0);
-        if (this.coyote.pos.y >= 222) {
+        this.vel.add(this.acc);
+        this.pos.add(this.vel);
+        this.acc.set(0,0);
+        if (this.pos.y >= 222) {
             this.isGrounded = true;
-            coyote.state = States.RUNNING;
+            coyote.state = State.RUNNING;
         }
     }
 
     applyForce (force) {
-        this.coyote.acc.add(force);
+        this.acc.add(force);
     }
 
     intersects(other) {
         let div = document.getElementById("player");
-        let left = this.coyote.pos.x;
-        let right = this.coyote.pos.x + div.offsetWidth;
-        let top = this.coyote.pos.y;
-        let bottom = this.coyote.pos.y + div.offsetHeight;
+        let left = this.pos.x;
+        let right = this.width;
+        let top = this.pos.y;
+        let bottom = this.pos.y + this.height;
         let oLeft = other.left;
         let oRight = other.right;
         let oTop = other.top;
@@ -44,9 +46,9 @@ class Coyote {
     }
 
     edges () {
-        if (this.coyote.pos.y >= 222) {
-            this.coyote.vel.y *= 0;
-            this.coyote.pos.y = 222;
+        if (this.pos.y >= 222) {
+            this.vel.y *= 0;
+            this. pos.y = 222;
         }
     }
 }

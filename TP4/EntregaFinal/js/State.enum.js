@@ -1,6 +1,6 @@
-const States = {
+const State = {
     RUNNING: Symbol("running"),
     JUMPING: Symbol("jumping"),
     FALLING: Symbol("falling") 
 };
-Object.freeze(States);
+Object.freeze(State);

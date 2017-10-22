@@ -8,18 +8,18 @@ function update() {
     coyote.update();
     cactus.update();
     if (coyote.intersects(cactus)){
-        console.log("COLISIONAKSDJAOPSD");
+       alert("COLISIONAKSDJAOPSD");
     }
    
 }
 
 function draw() {
     switch (coyote.state) {
-        case States.RUNNING:
+        case State.RUNNING:
             coyote.draw('coyote_run');
             break;
-        
-        case States.JUMPING:
+
+        case State.JUMPING:
             coyote.draw('coyote_jump');
             break;
 
@@ -27,9 +27,7 @@ function draw() {
             coyote.draw('coyote_run');
             break;
     }
-    
     cactus.draw();
-
 }
 
 function mainLoop() {
@@ -41,10 +39,10 @@ function mainLoop() {
 document.addEventListener('keydown', event => {
     if ( ((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar 
         coyote.isGrounded = false;
-        coyote.applyForce(new Vec2(0, -8.5));
-        coyote.state = States.JUMPING;
+        coyote.applyForce(new Vec2(0, -8.5)); //jump force
+        coyote.state = State.JUMPING;
     } else if (event.keyCode === 40) { // 40: down arrow
-        coyote.applyForce(new Vec2(0, 8));
+        coyote.applyForce(new Vec2(0, 16));
     }
 });
 

@@ -59,7 +59,6 @@
 }
 
 #obstacles {
-    border:#000 solid 1px;
     width: 137px;
     height: 124px;
     z-index: 900;
@@ -69,7 +68,6 @@
 }
 
 #player {
-    border:#000 solid 1px;
     background-image: url("../images/coyote.png");
     z-index: 1000;
     top: 222px;
