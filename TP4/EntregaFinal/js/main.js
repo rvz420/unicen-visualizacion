@@ -11,9 +11,15 @@ function update(delta) {
     coyote.applyForce(gravity);
     coyote.edges();
     coyote.update(delta);
+    if (cactus.pos.x < -200) {
+        cactus.pos.x = 700;
+    }
+    if (cactus.vel.x < -20) {
+        cactus.vel.x = -20;
+    }
     cactus.update(delta);
     if (coyote.intersects(cactus)) {
-        alert("COLISIONAKSDJAOPSD");
+        document.getElementById('perdiste').innerHTML = '<h1>PERDISTE BENJA :v</h1>';
     }
 }
 
@@ -31,6 +37,7 @@ function draw() {
             coyote.draw('coyote_run');
             break;
     }
+    
     cactus.draw();
 }
 

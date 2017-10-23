@@ -19,7 +19,7 @@ class Cactus extends Entity{
     update () {
         this.vel.add(this.acc);
         this.pos.add(this.vel);
-        this.acc.set(-0.1, 0);
+        this.acc.set(-0.01, 0);
         this.left = this.pos.x;
         this.right = this.pos.x + this.div.offsetWidth;
         this.top = this.pos.y;
