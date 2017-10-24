@@ -37,7 +37,6 @@ function draw() {
             coyote.draw('coyote_run');
             break;
     }
-    
     cactus.draw();
 }
 
@@ -58,13 +57,14 @@ function mainLoop(timestamp) {
 }
 
 document.addEventListener('keydown', event => {
-    if (((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar 
+    if (((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar
+        event.preventDefault(); 
         coyote.isGrounded = false;
         coyote.applyForce(new Vec2(0, -8.5)); //jump force
         coyote.state = State.JUMPING;
     } else if (event.keyCode === 40) { // 40: down arrow
         coyote.applyForce(new Vec2(0, 16));
     }
-});
+}, false);
 
 requestAnimationFrame(mainLoop);
