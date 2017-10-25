@@ -7,37 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/animations.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/site_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Winijuegos</title>
 </head>
 
 <body>
-    
-        <nav class="navbar sticky-top navbar-light bg-faded">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">Navbar</a>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="images/winijuegos_logo.png" alt="winijuegos-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar juegos" aria-label="Search">
+                        </form>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-success">Registrate</button>
+                <button type="button" class="btn btn-primary">Entrar</button>
+            </div>
+        </div>
+    </nav>
     <div class="gameWrapper">
         <div id="game" class="vertical-center">
             <div id="background_b"></div>
@@ -48,17 +47,54 @@
             <div id="player"></div>
         </div>
     </div>
-    <div class="container-fluid">
+
+    <div class="container">
         <div class="row">
-            <span id="perdiste">
-                <h1>dsadsad</h1>
-                <h1>dsadsad</h1>
-                <h1>dsadsad</h1>
-                <h1>dsadsad</h1>
-                <h1>dsadsad</h1>
-            </span>
+            <div class="col-md-12">
+                <img src="images/game_thumbnail.png" alt="game-image" class="img-thumbnail img-game">
+                <span class="game_title">Road runner</span>
+                <br>
+                <span class="game_category">Juegos de Habilidad / Juegos de Saltar / Road runner</span>
+                <br>
+                <span class="game_data">25 de octubre de 2017 | 102.185 Partidas</span>
+            </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-12 desc">
+                <h2 class="header-title">controles</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 desc">
+                <h2 class="header-title">Juegos similares</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-group mx-auto">
+                <div class="card" style="width: 132px;">
+                    <img class="card-img-top" src="http://via.placeholder.com/132x91" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-name">Card title</h4>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 132px;">
+                    <img class="card-img-top" src="http://via.placeholder.com/132x91" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-name">Card title</h4>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 132px;">
+                    <img class="card-img-top" src="http://via.placeholder.com/132x91" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-name">Card title</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
