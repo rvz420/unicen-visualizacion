@@ -57,12 +57,11 @@ function mainLoop(timestamp) {
 }
 
 document.addEventListener('keydown', event => {
-    if (((event.keyCode === 38) || (event.keyCode === 32)) && (coyote.isGrounded)) { // 38: up arrow. 32: spacebar
-        event.preventDefault(); 
+    if ((event.keyCode === 87) && (coyote.isGrounded)) { // 87: w
         coyote.isGrounded = false;
         coyote.applyForce(new Vec2(0, -8.5)); //jump force
         coyote.state = State.JUMPING;
-    } else if (event.keyCode === 40) { // 40: down arrow
+    } else if (event.keyCode === 83) { // 83: s
         coyote.applyForce(new Vec2(0, 16));
     }
 }, false);

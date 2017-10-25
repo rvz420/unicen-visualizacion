@@ -2,6 +2,10 @@ body {
     background-color: #f3f3f3;
 }
 
+.btn-nav {
+    margin: 0 1%;
+}
+
 .vertical-center{
     position: absolute;
     top:50%;
@@ -80,12 +84,112 @@ body {
     margin-top: 20px;
 }
 
-.card {
-    margin: 2%;
+.description {
+    margin: 2% 0;
+    color: #636669;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
 }
 
-.card-name {
+.figure {
+    margin-top: 2%;
+}
+
+.game-controls {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.game-controls .type {
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/controls.svg) no-repeat 0 0;
+    background-size: 201px;
+    height: 52px;
+}
+
+.game-controls .kb-generic-key {
+    background-position: 0 -720px;
+    color: #a0a0a0;
+    font-family: 'TextaNarrowMedium',Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 52px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    text-transform: uppercase;
+    width: 49px;
+}
+
+.game-controls > li {
+    display: inline-block;
+    vertical-align: top;
+    color: #97989b;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+
+.action {
+    display: inline-block;
+    line-height: 50px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.figure-caption {
     font-size: 14px;
     line-height: 18px;
     padding: 8px 0 0 5px;
+    color: #2f3237;
+    display: block;
+    font-weight: bold;
+}
+
+.main-footer {
+    background-color: #2f3237;
+    border: 0;
+    margin: -8px auto 0;
+    overflow: hidden;
+    padding: 0 0 80px;
+    width: 100vw;
+}
+
+.footer-nav {
+    height: 1%;
+    margin: 20px auto 0;
+    overflow: hidden;
+    width: 1140px;
+}
+
+.footer-nav ul {
+    float: left;
+    margin: 0 0 0 20px;
+    width: 140px;
+}
+
+.footer-nav h4 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-nav li {
+    color: #89949b;
+    font-size: 13px;
+    line-height: 21px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav a {
+    font-family: "Roboto";
+    color: #89949b;
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+    outline: 0;
+    text-decoration: none;
 }
