@@ -1,3 +1,5 @@
+@font-face { font-family: m5x7; src: url('../fonts/m5x7.ttf'); }
+
 #game {
     width: 640px;
     height: 448px;
@@ -9,6 +11,22 @@
 
 #game div {
     position: absolute;
+}
+
+#score {
+    z-index: 10000;
+    margin-left: 1%;
+}
+
+.reset, #score span{
+    font-family: m5x7, sans-serif;
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.reset {
+    z-index: 100011;
 }
 
 #background_b {
@@ -35,7 +53,6 @@
     animation-timing-function: linear;
 }
 
-
 #foreground {
     width: 640px;
     height: 448px;
@@ -58,6 +75,13 @@
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+.paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
 }
 
 #obstacles {
@@ -89,11 +113,17 @@
 .coyote_jump {
     width: 104px;
     height: 150px;
-    background-position: 0 150px;
+    background-position: 0 282px;
     animation-name: coyote-jump-x;
     animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(6);
+}
+
+.coyote_dies {
+    width: 130px;
+    height: 132px;
+    background-position: 0 132px;
 }
 
 @keyframes coyote-jump-x {

@@ -2,6 +2,9 @@ let lastFrameTimeMs = 0, // The last time the loop was run
     maxFPS = 60; // The maximum FPS we want to allow
     delta = 0,
     timestep = 1000 / 60,
+    divScore = document.getElementById('score_val');
+    divGame = document.getElementById('game');
+    score = 0;
     gravity = new Vec2(0, 0.2),
     coyote = new Coyote(),
     cactus = new Cactus();
@@ -19,7 +22,12 @@ function update(delta) {
     }
     cactus.update(delta);
     if (coyote.intersects(cactus)) {
-        document.getElementById('perdiste').innerHTML = '<h1>PERDISTE BENJA :v</h1>';
+        coyote.state = State.DIE;
+    }
+
+    if(coyote.state != State.DIE){
+        score += 0.1;
+        divScore.innerHTML = score.toFixed(2)
     }
 }
 
@@ -31,6 +39,10 @@ function draw() {
 
         case State.JUMPING:
             coyote.draw('coyote_jump');
+            break;
+        
+        case State.DIE:
+            coyote.draw('coyote_dies');
             break;
 
         default:

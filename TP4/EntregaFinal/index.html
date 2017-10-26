@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/site_style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png">
     <title>Winijuegos</title>
 </head>
@@ -40,10 +41,12 @@
     </nav>
     <div class="gameWrapper">
         <div id="game" class="vertical-center">
+            <div id="score"><span>Score: <span id="score_val">0</span> Km</span></div>
+            <div id="reset"><span class="reset">Reset </span></div>
             <div id="background_b"></div>
             <div id="background_a"></div>
             <div id="foreground"></div>
-            <div id="midground"></div>
+            <div id="midground"></div> 
             <div id="obstacles"></div>
             <div id="player"></div>
         </div>
@@ -310,7 +313,6 @@
     <script src="js/State.enum.js"></script>
     <script src="js/Math.js"></script>
     <script src="js/Entity.js"></script>
-    <script src="js/Entities.js"></script>
     <script src="js/Cactus.js"></script>
     <script src="js/Coyote.js"></script>
     <script src="js/main.js"></script>

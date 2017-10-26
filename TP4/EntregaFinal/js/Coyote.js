@@ -22,7 +22,7 @@ class Coyote extends Entity{
         this.vel.add(this.acc);
         this.pos.add(this.vel);
         this.acc.set(0,0);
-        if (this.pos.y >= 222) {
+        if (this.pos.y >= 222 && this.state != State.DIE) {
             this.isGrounded = true;
             coyote.state = State.RUNNING;
         }
@@ -46,9 +46,11 @@ class Coyote extends Entity{
     }
 
     edges () {
-        if (this.pos.y >= 222) {
-            this.vel.y *= 0;
-            this. pos.y = 222;
+        if (this.state != State.DIE){
+            if (this.pos.y >= 222) {
+                this.vel.y *= 0;
+                this. pos.y = 222;
+            }
         }
     }
 }
