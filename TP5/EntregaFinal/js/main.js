@@ -5,10 +5,13 @@ cb.setToken("159279216-fS4fVDM4aD0gmgwexvRob4uOLToOKKX5bnBrhe7m", "eELKFBegOv2Ms
 let imagenes = document.getElementById('images');
 let btnBuscar = document.getElementById('buscar');
 
+  document.querySelector('.searchbox [type="reset"]').addEventListener('click', function() {  this.parentNode.querySelector('input').focus();});
+console.log(document.getElementById('label').innerHTML);
+
 btnBuscar.addEventListener('click', ()=>{
     imagenes.innerHTML = "";
     var params = {
-        q: "#lanus",
+        q: "#galleta",
         count: 200
     };
     
@@ -17,6 +20,8 @@ btnBuscar.addEventListener('click', ()=>{
         params
     ).then((json) => {
         console.log(json);
+        console.log(document.getElementById('label').innerHTML);
+        
         json.reply.statuses.forEach((status) => {
             if(status.entities.media) {
                 imagenes.innerHTML += `<img src="${status.entities.media[0].media_url}">`;  
