@@ -31,6 +31,13 @@ body {
     font-family: twit-font;
 }
 
+.tw-img{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.tw-img image{
+  position: absolute;
+}
+
 .sbx-twitter {
     display: inline-block;
     position: relative;
