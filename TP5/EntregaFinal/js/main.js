@@ -13,7 +13,7 @@ btnBuscar.addEventListener('click', ()=>{
     imagenes.innerHTML = "";
     var params = {
         q: `#${busqueda}`,
-        count: 200
+        count: 20
     };
     
     cb.__call(
