@@ -31,7 +31,7 @@ btnBuscar.addEventListener('click', ()=>{
             if(status.entities.media) {
                 let arrImg={imagen: status.entities.media[0].media_url, likes: status.favorite_count};
 
-                $.get('./js/card.mst', function(template) {
+                $.get('./js/list.mst', function(template) {
                     var rendered = Mustache.render(template, {tweets:arrImg});
                     $('#img-container').append(rendered);
                     
