@@ -1,7 +1,9 @@
+{{#tweets}}
 <div class="card text-white color_cards mb-3">
-  <img class="card-img-top" src="{{tweets.imagen}}" alt="Card image cap">
+  <img class="card-img-top" src="{{imagen}}" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">Card title</h4>
-    <p class="card-text">Likes {{tweets.likes}}</p>
+    <p class="card-text">Likes {{likes}}</p>
   </div>
 </div>
+{{/tweets}}
