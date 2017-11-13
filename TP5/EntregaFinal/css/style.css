@@ -237,3 +237,35 @@ body {
 .form-check-label{
   padding-left: 1rem;
 }
+
+@keyframes agrandar {
+  0% {transform: scale(1); }
+  50% {transform: scale(1.2); }
+  100% {transform: scale(1); }
+}
+
+@keyframes rotar3d {
+  0% {transform: rotateY(0deg); }
+  50% {transform: rotateY(180deg); }
+  100% {transform: rotateY(0deg); }
+}
+
+@keyframes vibrar {
+  0% {transform: rotate(0deg); }
+  25%{transform: rotate(-20deg); }
+  50% {transform: rotate(0deg); }
+  75% {transform: rotate(20deg); }
+  100% {transform: rotate(0deg); }
+}
+
+.like-anim-1 {
+  animation: agrandar .5s ease infinite;
+}
+
+.like-anim-2 {
+  animation: rotar3d 1.5s ease infinite;
+}
+
+.like-anim-3 {
+  animation: vibrar 1.5s linear infinite;
+}

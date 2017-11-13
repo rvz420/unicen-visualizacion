@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var cb = new Codebird;
     cb.setConsumerKey("UMJrCxTpWL2JMFnEe2JZtwa7X", "lHz7kqxnzfGAsuDcAQDlRq8fWt3lMVethWmQh4dHmzbK29t9Xo");
     cb.setToken("159279216-fS4fVDM4aD0gmgwexvRob4uOLToOKKX5bnBrhe7m", "eELKFBegOv2MsvY4Brh8AuPWGPNyHKzI8sTztXc2mG8QB");
@@ -16,7 +16,8 @@ $(document).ready(function(){
         arrImg = [];
 
         let busqueda = document.getElementById('label').value;
-        
+        imagenes.innerHTML = "";
+
         if (busqueda[0] === '#') { //saca el caracter # si en la busqueda se ingresó
             busqueda = busqueda.substring(1, busqueda.length);
         }
@@ -33,28 +34,11 @@ $(document).ready(function(){
             console.log(document.getElementById('label').innerHTML);
             json.reply.statuses.forEach((status) => {
                 if (status.entities.media) {
-                    arrImg.push({ imagen: status.entities.media[0].media_url, likes: status.favorite_count });
+                    arrImg.push({ imagen: status.entities.media[0].media_url, likes: status.favorite_count, animation: Math.floor(Math.random() *3) +1 });
                 }
             });
             console.log("imagenes2 ", arrImg);
-            //layout();
-            if (inputRadio[0].checked && arrImg) {
-                console.log("grilla activa");
-                console.log(arrImg);
-                $.get('./js/card.mst', function (template) {
-                    var rendered = Mustache.render(template, { tweets: arrImg });
-                    $('#img-container').append(rendered);
-    
-                });
-            }
-            else if (inputRadio[1].checked && arrImg) {
-                console.log("lista activa");
-                $.get('./js/list.mst', function (template) {
-                    var rendered = Mustache.render(template, { tweets: arrImg });
-                    $('#img-container').append(rendered);
-    
-                });
-            }
+            layout();
         })
     })
 
@@ -75,13 +59,13 @@ $(document).ready(function(){
                 $('#img-container').append(rendered);
 
             });
-            console.log("salida de la lista ",arrImg);
+            console.log("salida de la lista ", arrImg);
         }
     }
 
     $('.form-check-input').on('click', () => {
         console.log("input clickeado");
-        imagenes.innerHTML=" ";
+        imagenes.innerHTML = " ";
         layout();
-    }); 
+    });
 });

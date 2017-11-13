@@ -3,7 +3,7 @@
   <img class="card-img-top" src="{{imagen}}" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">Card title</h4>
-    <p class="card-text">Likes {{likes}}</p>
+    <span class="likes"><p class="card-text">{{likes}} <i class="fa fa-thumbs-o-up like-anim-{{animation}}" aria-hidden="true"></i></p></span>
   </div>
 </div>
 {{/tweets}}
