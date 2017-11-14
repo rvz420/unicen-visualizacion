@@ -14,7 +14,6 @@ body {
 
 .hero-img {
   position: relative;
-  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -268,4 +267,46 @@ body {
 
 .like-anim-3 {
   animation: vibrar 1.5s linear infinite;
+}
+
+@keyframes escalar{
+  from {transform: scale(1,1)}
+  to {transform: scale(1.2,1.2)}
+}
+.escala:hover{
+  animation: escalar 2s forwards;
+  z-index: 10000;
+}
+
+.sefueabuscar{
+  transform: translate(-8000px);
+}
+
+.animar{
+  transition: all 3s;
+}
+
+#to-top{
+  border-radius: 50%;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99999;
+}
+
+.fade-out-up{
+  transform: translateY(-5000px);
+}
+
+@keyframes aparecer{
+  from{
+    transform: translate(-5000px);
+  }
+  to{
+    transform: translate(0px);
+  }
+}
+.fade-in-left{
+  animation: aparecer 2s ease;
 }

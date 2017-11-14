@@ -4,7 +4,7 @@ $(document).ready(function () {
     cb.setToken("159279216-fS4fVDM4aD0gmgwexvRob4uOLToOKKX5bnBrhe7m", "eELKFBegOv2MsvY4Brh8AuPWGPNyHKzI8sTztXc2mG8QB");
     //cb.setProxy("https://cb-proxy.herokuapp.com/");
 
-    let imagenes = document.getElementById('img-container');
+    let imagenes = document.getElementById('images');
     let btnBuscar = document.getElementById('buscar');
     let inputRadio = document.getElementsByClassName('form-check-input');
     let arrImg = new Array();
@@ -12,6 +12,7 @@ $(document).ready(function () {
     document.querySelector('.searchbox [type="reset"]').addEventListener('click', function () { this.parentNode.querySelector('input').focus(); });
 
     btnBuscar.addEventListener('click', () => {
+        $('#form-buscar').addClass('sefueabuscar');
         console.log("input value", document.getElementById('label').value);
         arrImg = [];
 
@@ -30,42 +31,65 @@ $(document).ready(function () {
             "search_tweets",
             params
         ).then((json) => {
-            console.log(json);
-            console.log(document.getElementById('label').innerHTML);
+           /* console.log(json);
+            console.log(document.getElementById('label').innerHTML);*/
             json.reply.statuses.forEach((status) => {
                 if (status.entities.media) {
                     arrImg.push({ imagen: status.entities.media[0].media_url, likes: status.favorite_count, animation: Math.floor(Math.random() *3) +1 });
                 }
             });
-            console.log("imagenes2 ", arrImg);
             layout();
         })
     })
 
     function layout() {
         if (inputRadio[0].checked && arrImg) {
-            console.log("grilla activa");
-            console.log(arrImg);
             $.get('./js/card.mst', function (template) {
                 var rendered = Mustache.render(template, { tweets: arrImg });
-                $('#img-container').append(rendered);
-
-            });
+                $('#images').html(rendered);
+                
+            }); 
         }
         else if (inputRadio[1].checked && arrImg) {
-            console.log("lista activa");
             $.get('./js/list.mst', function (template2) {
                 var rendered = Mustache.render(template2, { tweets: arrImg });
-                $('#img-container').append(rendered);
-
+                $('#images').html(rendered);
             });
-            console.log("salida de la lista ", arrImg);
         }
+        $('html,body').animate({scrollTop:$('#images').offset().top},1000);
+        setTimeout(()=>{$('#form-buscar').removeClass('sefueabuscar');},1000);
     }
 
+    //checkbox de menu de layouts
     $('.form-check-input').on('click', () => {
-        console.log("input clickeado");
-        imagenes.innerHTML = " ";
-        layout();
+        if (inputRadio[0].checked){
+            $('#ly-2').removeClass('fade-in-left');
+            $('#ly-2').addClass('fade-out-up');
+        }
+        else{
+            $('#ly-1').removeClass('fade-in-left');
+            $('#ly-1').addClass('fade-out-up');
+        }
+        setTimeout(()=>{
+            layout();}
+        ,3000);
+        
+    });
+
+    //button to go top
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("to-top").style.display = "block";
+        } else {
+            document.getElementById("to-top").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    $("#to-top").on('click',
+    function topFunction() {
+        $('html,body').animate({scrollTop:0},1000);
     });
 });

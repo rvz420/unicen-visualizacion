@@ -1,9 +1,11 @@
-{{#tweets}}
-<div class="card text-white color_cards mb-3">
-  <img class="card-img-top" src="{{imagen}}" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <span class="likes"><p class="card-text">{{likes}} <i class="fa fa-thumbs-o-up like-anim-{{animation}}" aria-hidden="true"></i></p></span>
+<div class="card-columns animar fade-in-left" id="ly-1">    
+  {{#tweets}}
+  <div class="card text-white color_cards mb-3">
+    <img class="card-img-top" src="{{imagen}}" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <span class="likes"><p class="card-text">{{likes}} <i class="fa fa-thumbs-o-up like-anim-{{animation}}" aria-hidden="true"></i></p></span>
+    </div>
   </div>
+  {{/tweets}}
 </div>
-{{/tweets}}

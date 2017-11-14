@@ -17,7 +17,9 @@
 </head>
 
 <body>
-
+  <!-- Button to top -->
+  <div id="to-top"><i class="fa fa-arrow-circle-up fa-3x fa-inverse" aria-hidden="true"></i></div>
+  
   <!-- Menu -->
 
   <nav class="navbar fixed-top transparente">
@@ -61,7 +63,7 @@
     <div class="hero-content">
       <h1>twimagen</h1>
       <h2>Encontrando tu imagen</h2>
-      <form novalidate="novalidate" onsubmit="return false;" class="searchbox sbx-twitter">
+      <form novalidate="novalidate" onsubmit="return false;" id="form-buscar" class="searchbox sbx-twitter animar">
         <div role="search" class="sbx-twitter__wrapper">
           <input id="label" type="search" name="search" placeholder="ej: #twimagen" autocomplete="off" required="required" class="sbx-twitter__input">
           <button id=buscar type="submit" title="Submit your search query." class="sbx-twitter__submit">
@@ -81,9 +83,7 @@
 
   <!-- Imagenes -->
   <div class="tw-img container-fluid" id="images">
-    <div class="card-columns" id="img-container">
-      
-    </div>
+    
   </div>
 
   <!-- Optional JavaScript -->
