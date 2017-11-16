@@ -297,6 +297,7 @@ body {
 
 .fade-out-up{
   transform: translateY(-5000px);
+  opacity: 0;
 }
 
 @keyframes aparecer{
@@ -307,7 +308,7 @@ body {
     transform: translate(0px);
   }
 }
-.fade-in-left{
+.fade-in-left, .slider-anim-1{
   animation: aparecer 2s ease;
 }
 
@@ -319,6 +320,19 @@ body {
   max-height: 100vh;
 }
 
+.slider-anim-2 {
+  animation: spin 2s linear;
+}
+
+.slider-anim-3 {
+  animation: slide-agrandar 2s linear;
+}
+
+
+@keyframes slide-agrandar {
+  from {transform: scale(0,0)}
+  to {transform: scale(1,1)}
+}
 
 /*---------------------LOADING----------------------*/
 .loader {

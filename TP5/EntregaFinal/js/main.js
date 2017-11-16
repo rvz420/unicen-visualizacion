@@ -15,7 +15,6 @@ $(document).ready(function () {
     btnBuscar.addEventListener('click', () => {
         $('#form-buscar').addClass('sefueabuscar');
         $('#loading').addClass('loader');
-        console.log("input value", document.getElementById('label').value);
         arrImg = [];
         let busqueda = document.getElementById('label').value;
         //imagenes.innerHTML = "";
@@ -34,7 +33,7 @@ $(document).ready(function () {
         ).then((json) => {
             json.reply.statuses.forEach((status) => {
                 if (status.entities.media) {
-                    arrImg.push({ imagen: status.entities.media[0].media_url, likes: status.favorite_count, animation: Math.floor(Math.random() *3) +1 });
+                    arrImg.push({ username: status.user.name, imagen: status.entities.media[0].media_url, likes: status.favorite_count, animation: Math.floor(Math.random() *3) +1 });
                 }
             });
             imagenes.innerHTML = "";
@@ -80,12 +79,13 @@ $(document).ready(function () {
             $('#ly-3').removeClass('fade-in-left');
             $('#ly-3').addClass('fade-out-up');
         }
-        else if (inputRadio[1].checked){
+        else if (inputRadio[2].checked){
             $('#ly-1').removeClass('fade-in-left');
             $('#ly-1').addClass('fade-out-up');
             $('#ly-2').removeClass('fade-in-left');
             $('#ly-2').addClass('fade-out-up');
         }
+        $('#menu').removeClass('show'); 
         setTimeout(()=>{
             layout();}
         ,2000);
@@ -118,7 +118,9 @@ $(document).ready(function () {
         }
         myIndex++;
         if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); // Change image every 2 seconds
+        x[myIndex-1].style.display = "block";
+        let rand = Math.floor(Math.random() *3) +1
+        x[myIndex-1].className += ` slider-anim-${rand}`;  
+        setTimeout(carousel, 4000); // Change image every 2 seconds
     }
 });
