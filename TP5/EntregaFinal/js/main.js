@@ -13,6 +13,10 @@ $(document).ready(function () {
     document.querySelector('.searchbox [type="reset"]').addEventListener('click', function () { this.parentNode.querySelector('input').focus(); });
 
     btnBuscar.addEventListener('click', () => {
+        buscar();
+    })
+
+    function buscar() {
         $('#form-buscar').addClass('sefueabuscar');
         $('#loading').addClass('loader');
         arrImg = [];
@@ -39,7 +43,8 @@ $(document).ready(function () {
             imagenes.innerHTML = "";
             layout();
         })
-    })
+        setTimeout(buscar, 60000); //se busca de nuevo cada minuto
+    }
 
     function layout() {
         if (inputRadio[0].checked && arrImg) {
