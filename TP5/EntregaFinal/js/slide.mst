@@ -1,0 +1,7 @@
+<div class="animar fade-in-left row h-100 slider-content slider-section" id="ly-3"> 
+  {{#tweets}}
+    <div class="col-sm-12  my-auto">
+        <img class="mySlides img-fluid" src="{{imagen}}" >
+    </div>
+  {{/tweets}}
+</div>
